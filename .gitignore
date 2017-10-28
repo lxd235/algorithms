@@ -9,6 +9,7 @@ Desktop.ini
 *.so
 *.egg
 *.egg-info
+__pycache__
 dist
 build
 
