@@ -1,9 +1,10 @@
 from random import randint
 
-from .sort_utils import *
+from sort.sort_utils import *
 
 
-def check_io(unsorted_list):
+@time_cost
+def sort(unsorted_list):
     length = len(unsorted_list)
     for i in range(length):
         t = i
@@ -12,12 +13,12 @@ def check_io(unsorted_list):
             exchange(unsorted_list, t, j)
             j -= 1
             t -= 1
-    print(unsorted_list)
     return unsorted_list
 
 
 if __name__ == '__main__':
-    l = [randint(0, 20) for _ in range(20)]
-    print(l)
-    s = sorted(l)
-    assert check_io(l) == s, 'not sorted list!'
+    l = unsort_list()
+    # print('before sort:{}'.format(l))
+    sort_list = sort(l)
+    # print('after sort:{}'.format(sort_list))
+    assert is_sorted(sort_list), 'not sorted list!'
